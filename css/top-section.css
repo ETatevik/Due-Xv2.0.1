@@ -1,0 +1,143 @@
+.citation-front-container {
+    display: flex;
+}
+.citation-img-container {
+    min-width: 45%;
+    flex: 45%;
+}
+.citation-img-container img {
+    width: 100%;
+    height: auto;
+}
+.citation-text-container {
+    padding-left: 50px;
+    min-width: 55%;
+    flex: 55%;
+    position: relative;
+}
+.citation-text-container h2 {
+    margin: 0 0 70px 0;
+    font-size: 40px;
+    line-height: 60px;
+}
+.citation-text-container > span {
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+}
+.citation-text-container > span+span {
+    margin-top: 30px;
+}
+.author-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 35px;
+}
+.author_img {
+    width: 68px;
+    height: 68px;
+    background-image: url("../img/Ellipse\ 1.png");
+    border-radius: 50%;
+}
+.author-name {
+    margin-left: 20px;
+}
+.author-name span:first-child {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+.author-name span:nth-child(2) {
+    display: block;
+    font-size: 18px;
+    margin-top: 7px;
+}
+.mission-section {
+    font-family: 'Muli', sans-serif;
+}
+.mission-heading {
+    font-size: 50px;
+    line-height: 66px;
+    margin: 40px 0 80px;
+}
+.mission-box-container {
+    display: flex;
+}
+.mission-box-parent {
+    padding: 20px 20px 20px 0;
+}
+.mission-box-child {
+    display: block;
+    padding: 20px;
+    border-radius: 6px;
+}
+.mission-box-child:hover {
+    background-color: rgb(40, 34, 207);
+    color: #FFF;
+}
+.mission-box-child h3 {
+    font-size: 28px;
+    line-height: 40px;
+}
+.mission-box-child span:nth-child(2) {
+    display: block;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #B1AAAA;
+}
+.mission-box-child:hover.mission-box-child span:nth-child(2)  {
+    color: #FFF;
+}
+.mission-box-parent .mission-box-child.mission-active {
+    background-color: rgb(40, 34, 207);
+    color: #FFF;
+}
+.mission-box-parent .mission-box-child.mission-active span:nth-child(2) {
+    color: #FFF;
+}
+@media (max-width: 1200px) {
+    .citation-front-container {
+        flex-direction: column;
+    }
+    .citation-text-container {
+        padding: 0;
+    }
+    .citation-text-container h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .mission-box-container {
+        flex-wrap: wrap;
+    }
+    .mission-box-parent {
+        min-width: 50%;
+        flex: 50%;
+    }
+    .mission-box-parent:nth-child(even) {
+        padding-right: 0;
+    }
+}
+@media (max-width: 480px) {
+    .author-name span:first-child {
+        font-size: 20px;
+    }
+    .author-name span:nth-child(2) {
+        font-size: 16px;
+    }
+    .mission-heading {
+        text-align: center;
+        font-size: 35px;
+        margin: 20px 0 0 0;
+    }
+    .mission-box-parent {
+        min-width: 100%;
+        flex: 100%;
+    }
+    .mission-box-parent {
+        padding-right: 0;
+    }
+}

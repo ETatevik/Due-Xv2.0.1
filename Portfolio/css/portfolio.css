@@ -1,0 +1,37 @@
+.portfolio-heading-container h1 {
+    text-align: center;
+    font-size: 40px;
+}
+.portfolio-heading-container div {
+    text-align: justify;
+    font-size: 20px;
+    margin: 45px 0;
+}
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+.portfolio-box {
+    cursor: pointer;
+    position: relative;
+    font-size: 0;
+    border-radius: 5px;
+}
+.portfolio-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 2;
+}
+.portfolio-box img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px;
+}
