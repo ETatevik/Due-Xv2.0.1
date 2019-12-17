@@ -30,6 +30,7 @@ jQuery(document).ready(function($){
         let i = 0, j = 0;
 
         setInterval( function() {
+        	$('header.main-header-top').removeClass('moveIn');
             if(j == $('#front-box-slider li').length - 1){
 				j = -1;
 				
@@ -40,17 +41,17 @@ jQuery(document).ready(function($){
 			
             $('#front-box-slider li').eq(j).addClass('active');
 
+            $('header.main-header-top').addClass('move');
             i++;
             if(i >= sliderImgages.length){
                 i = 0;
             }
-            $('header.main-header-top').css({
-                backgroundImage: `url(img/${sliderImgages[i]})`
-            });
-
-			
-            
-
+            setTimeout(()=>{
+            	$('header.main-header-top').removeClass('move').addClass('moveIn');
+            	$('header.main-header-top').css({
+	                backgroundImage: `url(img/${sliderImgages[i]})`
+	            });
+            }, 50);
 
 			//Header slider buttons click
 			$('#arrow-next').on('click', function () {
@@ -232,7 +233,7 @@ jQuery(document).ready(function($){
 		$('.feature-slider').slick({
 			arrows: false,
 			autoplay: true,
-			autoplaySpeed: 3000,
+			autoplaySpeed: 4000,
 		});
 
 		$('.feature-button-container button:nth-child(1)').click(function(){
@@ -245,9 +246,9 @@ jQuery(document).ready(function($){
 	}
 	{
 		//Mission box hover effect
-		$('.mission-box-parent:not(:first-child) .mission-box-child').hover(function() {
-				$('.mission-box-child').removeClass('mission-active');
-		})
+		// $('.mission-box-parent:not(:first-child) .mission-box-child').hover(function() {
+		// 		$('.mission-box-child').removeClass('mission-active');
+		// })
 	}
 })
 
