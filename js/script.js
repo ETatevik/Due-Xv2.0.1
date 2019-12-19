@@ -89,160 +89,125 @@ jQuery(document).ready(function($){
     {
         //Team section slider
 
-        // $(window).resize(function() {
-		// 	if ($(window).width() > 995) {
-		// 		$('.container').children('.our-stuff').css({
-		// 			width: `${4 * $('.stuff-box').width()}px`
-		// 		});
-		// 	}
-		// 	else if ($(window).width() <= 995 && $(window).width() > 500) {
-		// 		$('.container').children('.our-stuff').css({
-		// 			width: `${2 * $('.stuff-box').width()}px`
-		// 		});
-		// 	}
-		// 	else {
-		// 		$('.container').children('.our-stuff').css({
-		// 			width: `${$('.stuff-box').width()}px`
-		// 		});
-		// 	} 
-        // });
-		{
-			let start;
-            let left = 0;
-            
-			if ($(window).width() > 995) {
-				start = 4 * $('.stuff-box').width();
-            }
-            else if ($(window).width() <= 995 && $(window).width() > 500){
-				start = 2 * $('.stuff-box').width();
-            }
-            else {
-				start = $('.stuff-box').width();
-			}
-
-			$('.team-arrow-next').click(function(event) {
-
-				if ($(window).width() > 995){
-					start += $('.stuff-box').width();
-
-					if (start > $('.stuff-container').width()){
-						left = 0;
-						start = 4 * $('.stuff-box').width();
-                    }
-                    else {
-						left += $('.stuff-box').width();
-					}
-					
-					$('.stuff-container').css('left', `${-left}px`);
-				}
-				else if ($(window).width() <= 995 && $(window).width() > 500){
-					start += $('.stuff-box').width();
-
-					if (start > $('.stuff-container').width()){
-						left = 0;
-						start = 2 * $('.stuff-box').width();
-                    }
-                    else{
-						left += $('.stuff-box').width();
-					}
-					
-					$('.stuff-container').css('left', `${-left}px`);
+        try {
+            $('section.team-section .owl-carousel').owlCarousel({
+                loop: true,
+                margin: 15,
+                responsiveClass: true,
+                nav: false,
+                autoplay:true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause:true,
+                loop: true,
+                nav: false,
+                responsive: {
+                0: {
+                   	items: 1
+                },
+                456:{
+                	items: 1.5
+                },
+                576: {
+                  	items: 2
+                },
+                756: {
+                  	items: 2.5
+                },
+                856: {
+                  	items: 3
+                },
+                976: {
+                  	items: 3.5
+                },
+                1100:{
+                	items: 4
+                },
+                1300:{
+                	items: 4.2
+                },
+                1400:{
+                	items: 4.5
+                },
+                1500:{
+                	items: 5
                 }
-                else {
-					start += $('.stuff-box').width();
-
-					if (start > $('.stuff-container').width()){
-						left = 0;
-						start = $('.stuff-box').width();
-                    }
-                    else {
-						left += $('.stuff-box').width();
-					}
-					
-					$('.stuff-container').css('left', `${-left}px`);
-				}
-				
-			});
-			
-
-			$('.team-arrow-perv').click(function(event) {
-				if ($(window).width() > 995){
-					start += $('.stuff-box').width();
-
-					if (left == 0){
-						left = $('.stuff-container').width() - 4 * $('.stuff-box').width();
-						start = $('.our-stuff').width();
-                    }
-                    else {
-						left  -= $('.stuff-box').width();
-					}
-					$('.stuff-container').css('left', `${-left}px`);
-                }
-                else if ($(window).width() <= 995 && $(window).width() > 500){
-					start += $('.stuff-box').width();
-
-					if (left == 0){
-						left = $('.stuff-container').width() - 2 * $('.stuff-box').width();
-						start = $('.our-stuff').width();
-                    }
-                    else {
-						left  -= $('.stuff-box').width();
-					}
-					$('.stuff-container').css('left', `${-left}px`);
-                }
-                else {
-					start += $('.stuff-box').width();
-					if (left == 0){
-						left = $('.stuff-container').width() - $('.stuff-box').width();
-						start = $('.our-stuff').width();
-                    }
-                    else {
-						left  -= $('.stuff-box').width();
-					}
-					$('.stuff-container').css('left', `${-left}px`);
-				}
-				
-			});
-
-			
-		}
+              }
+            });
+            $('section.team-section .owl-next').click(function() {
+                $('section.team-section .owl-carousel').trigger('next.owl.carousel');
+            })
+            $('section.team-section .owl-prev').click(function() {
+                $('section.team-section .owl-carousel').trigger('prev.owl.carousel');
+            })
+        } catch(e) {
+            // statements
+            console.log(e);
+        }
 	}
 	{
 		//Partners slider
-		$('.partners-logo-container').slick({
-			slidesToShow: 6,
-			slidesToScroll: 1,
-			arrows: false,
-			dots: false,
-				pauseOnHover: false,
-				responsive: [{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 4
-				}
-			}, {
-				breakpoint: 520,
-				settings: {
-					slidesToShow: 3
-				}
-			}]
-		});
+		
+		try {
+            $('section.partners-section .owl-carousel').owlCarousel({
+                loop: true,
+                margin: 15,
+                responsiveClass: true,
+                nav: false,
+                autoplay:true,
+                autoplayTimeout: 4500,
+                autoplayHoverPause:true,
+                loop: true,
+                nav: false,
+                responsive: {
+                0: {
+                   	items: 2
+                },
+                456:{
+                	items: 3
+                },
+                576: {
+                  	items: 4
+                },
+                856: {
+                  	items: 5
+                },
+                1100:{
+                	items: 6
+                },
+                1500:{
+                	items: 8
+                }
+              }
+            });
+        } catch(e) {
+            // statements
+            console.log(e);
+        }
 	}
 	{
 		//Feature slider
-		$('.feature-slider').slick({
-			arrows: false,
-			autoplay: true,
-			autoplaySpeed: 4000,
-		});
-
-		$('.feature-button-container button:nth-child(1)').click(function(){
-			$('.feature-slider').slick('slickPrev');
-		})
-		  
-		$('.feature-button-container button:nth-child(2)').click(function(){
-			$('.feature-slider').slick('slickNext');
-		})
+		try {
+            $('section.feature-section .owl-carousel').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: false,
+                autoplay:true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause:true,
+                loop: true,
+                nav: false,
+                items: 1
+            });
+             $('section.feature-section  .owl-next').click(function() {
+                $('section.feature-section .owl-carousel').trigger('next.owl.carousel');
+            })
+            $('section.feature-section  .owl-prev').click(function() {
+                $('section.feature-section  .owl-carousel').trigger('prev.owl.carousel');
+            })
+        } catch(e) {
+            // statements
+            console.log(e);
+        }
 	}
 	{
 		//Mission box hover effect
